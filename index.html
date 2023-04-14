@@ -14,6 +14,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="//unpkg.com/alpinejs" defer></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
@@ -21,10 +22,11 @@
 
 <body>
   <div class="bg-white">
-    <header class="absolute inset-x-0 top-0 z-50">
+    <header class="absolute inset-x-0 top-0 z-50" x-data="{openMenu:false}">
       <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:hidden">
-          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <button x-on:click="openMenu = true" type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Open main menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
@@ -42,18 +44,14 @@
           <a href="#contact" class="text-sm font-semibold leading-6 text-gray-900">contact</a>
         </div>
       </nav>
-      <!-- Mobile menu, show/hide based on menu open state. -->
-      <div class="lg:hidden" role="dialog" aria-modal="false">
-        <!-- Background backdrop, show/hide based on slide-over state. -->
+
+      <div class="lg:hidden" x-show="openMenu" role="dialog" aria-modal="false">
+
         <div class="fixed inset-0 z-50"></div>
         <div
           class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-            </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          <div class="flex items-center justify-end">
+            <button x-on:click="openMenu = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 aria-hidden="true">
@@ -64,23 +62,16 @@
           <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
               <div class="space-y-2 py-6">
-                <a href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                <a href="#bio" 
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Bio</a>
 
-                <a href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#skills"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Skills</a>
 
-                <a href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-
-                <a href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+                <a href="#contact"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">contact</a>
               </div>
-              <div class="py-6">
-                <a href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                  in</a>
-              </div>
+
             </div>
           </div>
         </div>
@@ -88,7 +79,7 @@
     </header>
     <div id="bio" class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
       <div
-        class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
+        class="absolute inset-y-0 invisible md:visible right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
         aria-hidden="true"></div>
       <section id="bio" class="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
         <div
@@ -112,9 +103,10 @@
   </div>
 
 
-  <section id="skills" class="bg-white h-screen p-2 relative isolate overflow-hidden">
-    <div class="absolute  left-1/2 -z-10 top-40 transform-gpu blur-3xl  sm:ml-16 sm:translate-x-0 sm:transform-gpu">
-      <div class="aspect-[1097/845] w-[50rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+  <section id="skills" class="bg-white min-h-screen p-2 relative isolate overflow-hidden">
+    <div
+      class="absolute invisible md:visible left-1/2 -z-10 top-10 transform-gpu blur-3xl  sm:ml-16 sm:translate-x-0 sm:transform-gpu">
+      <div class="aspect-[1097/845] w-[40rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
       </div>
     </div>
@@ -149,6 +141,7 @@
       </div>
     </div>
   </section>
+
   <section id="contact" class="relative isolate overflow-hidden bg-white py-24 sm:py-32">
     <div class="hidden sm:absolute sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl">
       <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
@@ -159,11 +152,11 @@
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2 class="text-4xl font-bold tracking-tight text-black sm:text-6xl">Contact</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-700">You can ontact me at </p>
+        <p class="mt-6 text-lg leading-8 text-gray-700">You can contact me at this links below: </p>
       </div>
       <div
         class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">
-        <a href="mailto:kassem.hachi@terrainknowledge.com">
+        <a href="mailto:kassem.hachi@terrainknowledge.com" target="_blank">
           <div
             class="flex flex-col gap-x-4 items-center rounded-xl bg-gray-100/5 group hover:bg-indigo-500 transition-all ease-linear duration-250 p-6 hover:ring-0 ring-1 ring-inset ring-back/10">
             <i class="fa-solid fa-envelope text-3xl text-indigo-500 group-hover:text-white"></i>
@@ -172,7 +165,7 @@
             </div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/kassemhachi">
+        <a href="https://www.linkedin.com/in/kassemhachi" target="_blank">
           <div
             class="flex flex-col gap-x-4 items-center rounded-xl bg-gray-100/5 p-6 ring-1 ring-inset ring-back/10 group hover:bg-indigo-500 transition-all ease-linear duration-250">
             <i class="fa-brands fa-linkedin text-3xl text-indigo-500 group-hover:text-white"></i>
@@ -181,7 +174,7 @@
             </div>
           </div>
         </a>
-        <a href="https://github.com/KassemHachi">
+        <a href="https://github.com/KassemHachi" target="_blank">
           <div
             class="flex flex-col gap-x-4 items-center rounded-xl bg-gray-100/5 p-6 ring-1 ring-inset ring-back/10 group hover:bg-indigo-500 transition-all ease-linear duration-250">
             <i class="fa-brands fa-square-github text-3xl text-indigo-500 group-hover:text-white"></i>
