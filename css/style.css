@@ -7,3 +7,6 @@
 .z-2{
     z-index:2
 }
+html{
+    scroll-behavior: smooth;
+}
