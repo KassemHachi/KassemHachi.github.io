@@ -23,7 +23,7 @@
 <body>
 
   <header>
-    <div class="w-full flex justify-between px-36 text-white bg-[#202336] py-8">
+    <div class="w-full flex flex-col lg:flex-row gap-2 justify-between px-36 text-white bg-[#202336] py-8">
       <div class="">
         <h1>Hachi Maamoune Kassem Mostapha</h1>
       </div>
@@ -37,78 +37,94 @@
       </nav>
     </div>
   </header>
-  <section id="home" class="w-full flex h-screen bg-[#23263a] px-36">
-    <div class=" h-full flex flex-col justify-center  w-2/3">
-      <h1 class="text-white text-6xl font-medium ">
+  <section id="home" class="w-full relative flex h-screen bg-[#23263a] px-10 lg:px-36 overflow-hidden">
+    <div
+      class="z-[1] hidden lg:block bg-gradient-to-r from-[#23263a] via-[#23263a] to-trasparent absolute w-full h-full right-0">
+    </div>
+    <img class="z-0 hidden lg:block absolute w-full right-0" src="/img/cover.jpg" alt="Cover">
+    <div class="z-10 h-full flex flex-col pt-20 lg:pt-0 justify-start lg:justify-center w-full lg:w-2/3">
+      <h1 class="text-white text-3xl lg:text-6xl font-medium ">
         Hello! I am <br> a Web and Mobile developer
       </h1>
-      <p class="text-2xl text-[#504c5d] mt-2">
+      <p class="text-lg line-clamp-3 text-[#504c5d] mt-2">
         Highly motivated IT enthusiast with +4 years of experience in web and mobile application development. Proficient
         in Laravel, React Native, Ionic Framework, NestJs, Next.js, and WordPress. Seeking to leverage my skills and
         passion for technology to contribute to innovative projects.
       </p>
     </div>
   </section>
-  <section id="skills" class="w-full min-h-screen bg-[#23263a]">
-    <div class=" h-full flex flex-col justify-center px-36 w-full">
+  <section id="skills" class="w-full min-h-screen bg-[#23263a] px-10 lg:px-36">
+    <div class=" h-full flex flex-col justify-center  w-full">
       <h4 class="text-white text-bold">Services</h4>
       <h1 class="text-[#ff4a57] text-6xl font-bold ">Skill-Set</h1>
       <hr class="border-4 w-[150px] mt-5 border-[#ff4a57]">
 
-      <div class="grid grid-cols-4 gap-8 w-full my-10">
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full my-10">
+        <div title="Laravel Framework"
+          class="col-span-1 bg-[#2a2d41] hover:bg-[#4c4f63] transition-all cursor-pointer  h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
           <img class="w-full h-48 object-contain" src="/img/laravel.png" alt="Laravel">
           <h2 class="text-white text-xl font-semibold">Laravel Framework</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/nestjs.png" alt="Nest js">
+        <div title="Nest js"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/nestjs.png" alt="Nest js">
           <h2 class="text-white text-xl font-semibold">Nest js</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/reactjs.png" alt="React.js">
+        <div title="React.js Framework"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/reactjs.png" alt="React.js">
           <h2 class="text-white text-xl font-semibold">React.js Framework</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/nextjs.png" alt="Next.js">
+        <div title="Next.js Framework"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/nextjs.png" alt="Next.js">
           <h2 class="text-white text-xl font-semibold">Next.js Framework</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/wordpress.png" alt="Wordpress CMS">
+        <div title="Wordpress CMS"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/wordpress.png" alt="Wordpress CMS">
           <h2 class="text-white text-xl font-semibold">Wordpress CMS</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/reactjs.png" alt="React Native">
+        <div title="React Native"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/reactjs.png" alt="React Native">
           <h2 class="text-white text-xl font-semibold">React Native</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2"> <img
-            class="w-full h-48 object-contain" src="/img/ionicframework.png" alt="Ionic Framework">
+        <div title="Ionic Framework"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center pt-2">
+          <img class="w-full h-48 object-contain" src="/img/ionicframework.png" alt="Ionic Framework">
           <h2 class="text-white text-xl font-semibold">Ionic Framework</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2"> <img
-            class="w-full h-48 object-contain" src="/img/python.png" alt="Python">
+        <div title="Python"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2">
+          <img class="w-full h-48 object-contain" src="/img/python.png" alt="Python">
           <h2 class="text-white text-xl font-semibold">Python</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2"> <img
-            class="w-full h-48 object-contain" src="/img/alpinejs.webp" alt="Alpine js">
+        <div title="Alpine js"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2">
+          <img class="w-full h-48 object-contain" src="/img/alpinejs.webp" alt="Alpine js">
           <h2 class="text-white text-xl font-semibold">Alpine js</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2"> <img
-            class="w-full h-48 object-contain" src="/img/tailwindcss.png" alt="TailwindCSS">
+        <div title="TailwindCSS"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2">
+          <img class="w-full h-48 object-contain" src="/img/tailwindcss.png" alt="TailwindCSS">
           <h2 class="text-white text-xl font-semibold">TailwindCSS</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2"> <img
-            class="w-full h-48 object-contain" src="/img/firebase.png" alt="Firebase">
+        <div title="Firebase"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2">
+          <img class="w-full h-48 object-contain" src="/img/firebase.png" alt="Firebase">
           <h2 class="text-white text-xl font-semibold">Firebase</h2>
         </div>
-        <div class="col-span-1 bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2"> <img
-            class="w-full h-48 object-contain" src="/img/chartjs.png" alt="ChartJS">
+        <div title="ChartJS"
+          class="col-span-1  hover:bg-[#4c4f63] transition-all cursor-pointer bg-[#2a2d41] h-60 rounded-md gap-2 flex flex-col items-center justify-center p-2">
+          <img class="w-full h-48 object-contain" src="/img/chartjs.png" alt="ChartJS">
           <h2 class="text-white text-xl font-semibold">ChartJS</h2>
         </div>
       </div>
     </div>
   </section>
-  <section id="contact" class="h-screen bg-[#23263a] w-full">
-    <div class=" h-full flex flex-col justify-center items-start px-36 w-full">
+  <section id="contact" class="h-screen bg-[#23263a] w-full px-10 lg:px-36">
+    <div class=" h-full flex flex-col justify-center items-start w-full">
       <h1 class="text-[#ff4a57] text-6xl font-bold self-start">Contact me at:</h1>
       <hr class="border-4 w-[150px] mt-5 border-[#ff4a57] self-start">
       <div class="flex flex-col mt-20 w-2/3 justify-between gap-5">
