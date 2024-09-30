@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang='en'>
+<html id="app" lang='en'>
 
 <head>
   <meta charset='UTF-8'>
@@ -47,9 +47,11 @@
         Hello! I am <br> a Web and Mobile developer
       </h1>
       <p class="text-lg line-clamp-4 text-gray-500 mt-2">
-        Highly motivated IT enthusiast with 4+ years of experience in web and mobile app development. Proficient in
-        Laravel, React Native, Ionic Framework, NestJs, Next.js, and WordPress. Eager to contribute to innovative
+        Highly motivated IT enthusiast with 4+ years of experience in Full Stack development. Proficient in
+        Laravel, NestJs, Next.js, and WordPress. Eager to contribute to innovative
         projects with my technical skills and passion for technology.
+        <br>
+        I have experience in mobile development with React Native, Ionic Framework.
       </p>
     </div>
   </section>
@@ -123,7 +125,73 @@
       </div>
     </div>
   </section>
-  <section id="contact" class="h-screen bg-[#23263a] w-full px-10 lg:px-36">
+  <section id="projects" class="min-h-screen bg-[#23263a] w-full px-10 lg:px-36"
+    x-data="{ open: '', toggle() { document.getElementById('app').classList.toggle('overflow-hidden'); } }">
+    <h1 class="text-[#ff4a57] text-6xl font-bold ">Projects</h1>
+    <hr class="border-4 w-[150px] mt-5 border-[#ff4a57]">
+    <div class="grid grid-cols-3 gap-3 justify-center">
+      <div x-on:click="open='CodeFawry';toggle()"
+        class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
+        <div
+          class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
+          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+        </div>
+        <img class="w-full h-full object-cover" src="/img/projects/CodFawry-3.jpg" alt="CodeFawry Project">
+      </div>
+
+      <div x-on:click="open='Unic';toggle()"
+        class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
+        <div
+          class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
+          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+        </div>
+        <img class="w-full h-full object-cover" src="/img/projects/Unic-2.jpg" alt="CodeFawry Project">
+      </div>
+      <div x-on:click="open='Salem';toggle()"
+        class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
+        <div
+          class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
+          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+        </div>
+        <img class="w-full h-full object-cover" src="/img/projects/Salem-2.jpg" alt="CodeFawry Project">
+      </div>
+    </div>
+    <div x-show="open==='CodeFawry'"
+      class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
+      x-on:click.outside="open='';toggle()">
+      <!-- <img class="w-full h-full object-cover" src="/img/projects/CodFawry-2.jpg" alt="CodeFawry"> -->
+      <div class="w-full h-full flex flex-col gap-2">
+
+        <img class="w-full" src="/img/projects/CodFawry-2.jpg" />
+        <img class="w-full" src="/img/projects/CodFawry-3.jpg" />
+        <img class="w-full" src="/img/projects/CodFawry-4.jpg" />
+      </div>
+    </div>
+    <div x-show="open==='Unic'"
+      class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
+      x-on:click.outside="open='';toggle()">
+
+      <div class="w-full h-full flex flex-col">
+
+        <img class="" src="/img/projects/Unic-1.jpg" />
+
+      </div>
+    </div>
+    <div x-show="open==='Salem'"
+      class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
+      x-on:click.outside="open='';toggle()">
+
+      <div class="w-full h-full flex flex-col">
+
+        <img class="" src="/img/projects/Salem-1.jpg" />
+
+      </div>
+    </div>
+    <div x-show="open!==''" class="fixed inset-0 bg-[#121212]/80 z-0">
+
+    </div>
+  </section>
+  <section id="contact" class="min-h-screen bg-[#23263a] w-full px-10 lg:px-36">
     <div class=" h-full flex flex-col justify-center items-start w-full">
       <h1 class="text-[#ff4a57] text-6xl font-bold self-start">Contact me at:</h1>
       <hr class="border-4 w-[150px] mt-5 border-[#ff4a57] self-start">
@@ -155,6 +223,7 @@
       </div>
     </div>
   </section>
+
 </body>
 
 </html>
