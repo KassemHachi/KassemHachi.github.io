@@ -1,12 +1,12 @@
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
 }
-.z-1{
-    z-index:1
+.z-1 {
+  z-index: 1;
 }
-.z-2{
-    z-index:2
+.z-2 {
+  z-index: 2;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
