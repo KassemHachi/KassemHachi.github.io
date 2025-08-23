@@ -135,28 +135,45 @@
     <h1 class="text-[#ff4a57] text-6xl font-bold ">Projects</h1>
     <hr class="border-4 w-[150px] mt-5 border-[#ff4a57]">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 justify-center">
-      <div x-on:click="open='CodeFawry';toggle()"
+      <div x-on:click="open='benbadis';toggle()"
         class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
         <div
           class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
-          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+          <h1 class="text-3xl text-white font-semibold">Ben badis academy</h1>
         </div>
-        <img class="w-full h-full object-cover" src="/img/projects/CodFawry-3.jpg" alt="CodeFawry Project">
+        <img class="w-full h-full object-cover" src="/img/projects/benbadis-12.png" alt="CodeFawry Project">
+      </div>
+      <div x-on:click="open='benazzouz';toggle()"
+        class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
+        <div
+          class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
+          <h1 class="text-3xl text-white font-semibold">Hamam</h1>
+        </div>
+        <img class="w-full h-full object-cover" src="/img/projects/benazzouz-1.jpg" alt="CodeFawry Project">
       </div>
       <div x-on:click="open='Lansly';toggle()"
         class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
         <div
           class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
-          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+          <h1 class="text-3xl text-white font-semibold">Lansly</h1>
         </div>
         <img class="w-full h-full object-cover" src="/img/projects/lansly-1.png" alt="CodeFawry Project">
       </div>
+      <div x-on:click="open='CodeFawry';toggle()"
+        class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
+        <div
+          class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
+          <h1 class="text-3xl text-white font-semibold">CodFawry</h1>
+        </div>
+        <img class="w-full h-full object-cover" src="/img/projects/CodFawry-3.jpg" alt="CodeFawry Project">
+      </div>
+
 
       <div x-on:click="open='Unic';toggle()"
         class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
         <div
           class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
-          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+          <h1 class="text-3xl text-white font-semibold">Unic</h1>
         </div>
         <img class="w-full h-full object-cover" src="/img/projects/Unic-2.jpg" alt="CodeFawry Project">
       </div>
@@ -164,10 +181,11 @@
         class="relative h-60 rounded-md overflow-clip mt-10 shadow-lg shadow-[#4c4f63]/50 ">
         <div
           class="inset-0 absolute bg-[#23263a]/60 opacity-0 hover:opacity-100 transition-all duration-300 cursor-pointer flex items-center justify-center">
-          <h1 class="text-3xl text-white font-semibold">View Project</h1>
+          <h1 class="text-3xl text-white font-semibold">Salem</h1>
         </div>
         <img class="w-full h-full object-cover" src="/img/projects/Salem-2.jpg" alt="CodeFawry Project">
       </div>
+
     </div>
     <div x-show="open==='CodeFawry'"
       class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
@@ -201,6 +219,40 @@
         <img class="" src="/img/projects/Unic-1.jpg" />
 
       </div>
+    </div>
+    <div x-show="open==='benbadis'"
+      class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
+      x-on:click.outside="open='';toggle()">
+
+      <div class="w-full h-full flex flex-col gap-2">
+
+        <img class="w-full" src="/img/projects/benbadis-12.png" />
+        <img class="w-full" src="/img/projects/benbadis-11.png" />
+        <img class="w-full" src="/img/projects/benbadis-10.png" />
+        <img class="w-full" src="/img/projects/benbadis-9.png" />
+
+        <img class="w-full" src="/img/projects/benbadis-8.png" />
+        <img class="w-full" src="/img/projects/benbadis-7.png" />
+        <img class="w-full" src="/img/projects/benbadis-6.png" />
+        <img class="w-full" src="/img/projects/benbadis-5.png" />
+      </div>>
+    </div>
+    <div x-show="open==='benazzouz'"
+      class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
+      x-on:click.outside="open='';toggle()">
+
+      <div class="w-full h-full flex flex-col gap-2">
+
+        <img class="w-full" src="/img/projects/benazzouz-1.jpg" />
+        <img class="w-full" src="/img/projects/benazzouz-2.jpg" />
+        <img class="w-full" src="/img/projects/benazzouz-3.jpg" />
+        <img class="w-full" src="/img/projects/benazzouz-4.jpeg" />
+
+        <img class="w-full" src="/img/projects/benazzouz-8.jpeg" />
+        <img class="w-full" src="/img/projects/benazzouz-7.jpeg" />
+        <img class="w-full" src="/img/projects/benazzouz-6.jpeg" />
+        <img class="w-full" src="/img/projects/benazzouz-5.jpeg" />
+      </div>>
     </div>
     <div x-show="open==='Salem'"
       class="fixed overflow-y-scroll bg-[#23273a] rounded-md w-[80vw] top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 h-[80vh] flex items-center justify-center"
